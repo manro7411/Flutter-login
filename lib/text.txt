@@ -1,0 +1,17 @@
+ Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextFormField(
+                decoration:
+                    const InputDecoration(labelText: 'Enter your Email'),
+                validator: (value) {
+                  if (value == null ||
+                      value.isEmpty ||
+                      !RegExp(r'^[\w\.]+@([w-]+\.)+[\w-]{2,4}$')
+                          .hasMatch(value)) {
+                    return "Enter valid Email";
+                  } else {
+                    return null;
+                  }
+                  ;
+                }),
+          ),
